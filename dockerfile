@@ -30,7 +30,10 @@ RUN CHROME_VERSION=$(google-chrome-stable --version | grep -oP "\d+\.\d+\.\d+\.\
 # 4. Cài Oracle Instant Client (file ZIP phải có sẵn trong thư mục build)
 WORKDIR /opt/oracle
 COPY instantclient-basiclite-linux.x64-21.19.0.0.0dbru.zip .
+COPY instantclient-sqlplus-linux.x64-21.19.0.0.0dbru.zip .
+
 RUN unzip instantclient-basiclite-linux.x64-21.19.0.0.0dbru.zip && \
+    unzip instantclient-sqlplus-linux.x64-21.19.0.0.0dbru.zip && \
     ln -s /opt/oracle/instantclient_21_19 /opt/oracle/instantclient && \
     echo /opt/oracle/instantclient > /etc/ld.so.conf.d/oracle-instantclient.conf && \
     ldconfig

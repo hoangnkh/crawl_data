@@ -10,6 +10,7 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_FOLDER: /home/airflow/dags
     AIRFLOW__CORE__LOAD_EXAMPLES: "False"
     AIRFLOW__WEBSERVER__SECRET_KEY: "uWrC2euqrhM61u0NEgKSPXy4wnn1kaI8haMzpLiqciQ"
+    AIRFLOW_CONN_ORACLE_DEFAULT: 'oracle+cx_oracle://oracle_user:oracle_pass@oracle_host:1521/?service_name=ORCLPDB1'
   volumes:
     - /opt/airflow/dags:/home/airflow/dags
     - /opt/airflow/code:/home/airflow/code
